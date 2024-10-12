@@ -1,5 +1,140 @@
-template-repository (1.0-1) unstable; urgency=medium
+golang-goleveldb (0.0~git20200815.5c35d60-2) unstable; urgency=medium
 
-  * Initial release
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since stretch:
+    + Build-Depends: Drop versioned constraint on dh-golang.
+  * Remove constraints unnecessary since buster:
+    + Build-Depends: Drop versioned constraint on
+      golang-github-golang-snappy-dev.
+    + golang-github-syndtr-goleveldb-dev: Drop versioned constraint on
+      golang-github-golang-snappy-dev in Depends.
+  * Bump debhelper from old 12 to 13.
+  * Fix field name case in debian/control (Rules-requires-root =>
+    Rules-Requires-Root).
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Martina Ferrari ]
+  * Replace dependency on transitional ginkgo package.
+  * debian/control: Automated cme fixes.
+
+ -- Martina Ferrari <tina@debian.org>  Tue, 03 Oct 2023 11:37:36 +0000
+
+golang-goleveldb (0.0~git20200815.5c35d60-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream snapshot. (Closes: #969282)
+  * Create watch file.
+  * Point Vcs-* urls to salsa.debian.org.
+  * Remove d/watch lintian override.
+  * d/control: set Rules-requires-root: no.
+
+ -- Alexandre Viau <aviau@debian.org>  Sun, 30 Aug 2020 22:12:47 -0400
+
+golang-goleveldb (0.0~git20170725.0.b89cc31-2) unstable; urgency=medium
+
+  * Team upload.
+  * Remove Michael Lustfield (self) from Uploaders list.
+
+ -- Michael Lustfield <michael@lustfield.net>  Sat, 03 Feb 2018 12:13:27 -0600
+
+golang-goleveldb (0.0~git20170725.0.b89cc31-1) unstable; urgency=medium
+
+  [ Paul Tagliamonte ]
+  * Team upload.
+  * Remove Built-Using from arch:all -dev package
+
+  [ Michael Lustfield ]
+  * New upstream build.
+  * Drop custom "uscan" from d/rules; fixes lintian warning.
+  * Maintenance updates:
+    - Standards-Version bump.
+    - Clean up d/watch.
+    - Add Testsuite to d/control.
+
+ -- Michael Lustfield <michael@lustfield.net>  Fri, 29 Sep 2017 15:22:13 -0500
+
+golang-goleveldb (0.0~git20170302.0.3c5717c-5) unstable; urgency=medium
+
+  * Disable tests that break in buildd/repro-build. (Closes: #834959)
+
+ -- Michael Lustfield <michael@lustfield.net>  Wed, 26 Jul 2017 02:55:55 -0500
+
+golang-goleveldb (0.0~git20170302.0.3c5717c-4) unstable; urgency=medium
+
+  * Adding Breaks/Replaces to replacement package. (Closes: #859577)
+    Thanks Andreas Beckmann.
+
+ -- Michael Lustfield <michael@lustfield.net>  Fri, 07 Apr 2017 13:14:57 -0500
+
+golang-goleveldb (0.0~git20170302.0.3c5717c-3) unstable; urgency=medium
+
+  * Added d/watch and d/gbp.conf.
+  * Removed no longer used lintian overrides.
+  * Removing transitional package; it broke dh magic (empty .deb).
+
+ -- Michael Lustfield <michael@lustfield.net>  Thu, 06 Apr 2017 00:55:09 -0500
+
+golang-goleveldb (0.0~git20170302.0.3c5717c-2) unstable; urgency=medium
+
+  [ Martina Ferrari ]
+  * debian/control: Replace golang-go with golang-any in Build-Depends.
+  * Fix incorrect version on dh-golang dependency.
+
+  [ Michael Lustfield ]
+  * Team upload.
+  * Update to latest upstream commit.
+  * debian/control: Include alternate package name. (Closes: #859577)
+  * debian/changelog: Switched to updated version numbering.
+  * debian/compat: Version bump.
+  * debian/patches: Upstream merged patch; removing d/patch.
+  * debian/sources/lintian-overrides:
+    + Created override for missing d/watch.
+
+ -- Michael Lustfield <michael@lustfield.net>  Wed, 05 Apr 2017 02:47:12 -0500
+
+golang-goleveldb (0+git20160825.6ae1797-2) unstable; urgency=medium
+
+  * Increase test timeouts locally and globally, to solve build issues on slow
+    hardware. Closes: #837624.
+
+ -- Martina Ferrari <tina@debian.org>  Thu, 29 Sep 2016 23:15:16 +0000
+
+golang-goleveldb (0+git20160825.6ae1797-1) unstable; urgency=medium
+
+  [ Paul Tagliamonte ]
+  * Team upload.
+  * Use a secure transport for the Vcs-Git and Vcs-Browser URL
+
+  [ Martina Ferrari ]
+  * Update to latest upstream commit.
+  * Fix Vcs-Browser and update Standards-Version (no changes).
+  * Disable flaky tests. Closes: #834959.
+  * Refresh packaging to use current practices.
+
+ -- Martina Ferrari <tina@debian.org>  Mon, 29 Aug 2016 05:02:40 +0200
+
+golang-goleveldb (0+git20150819.1a9d62f-2) unstable; urgency=medium
+
+  * debian/control: Update snappy package name.
+
+ -- Martina Ferrari <tina@debian.org>  Tue, 25 Aug 2015 07:14:40 +0300
+
+golang-goleveldb (0+git20150819.1a9d62f-1) unstable; urgency=medium
+
+  * debian/rules: Add gen-orig-tgz target.
+  * Update to latest upstream commit.
+  * Remove outdated patch.
+  * Update dependency for new snappy-go package.
+
+ -- Martina Ferrari <tina@debian.org>  Fri, 21 Aug 2015 22:00:35 +0000
+
+golang-goleveldb (0+git20150214.e9e2c8f-2) unstable; urgency=medium
+
+  * debian/control: Migration to pkg-go team.
+
+ -- Martina Ferrari <tina@debian.org>  Fri, 21 Aug 2015 22:54:48 +0200
+
+golang-goleveldb (0+git20150214.e9e2c8f-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #778420)
+
+ -- Martina Ferrari <tina@debian.org>  Mon, 16 Feb 2015 07:05:46 +0000
